@@ -1,6 +1,6 @@
 Package.describe({
   name: 'radical3do:sinon',
-  version: '0.0.2',
+  version: '0.0.3',
   // Brief, one-line summary of the package.
   summary: 'Meteor Sinon.js package warper',
   // URL to the Git repository containing the source code for this package.
@@ -11,11 +11,14 @@ Package.describe({
 });
 
 Npm.depends({
+  "exposify": "0.5.0",
   "sinon": "1.17.4"
 });
 
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
-  api.addFiles('sinon.1.17.4.js');
+  api.use('ecmascript');
+  api.use(['cosmos:browserify@0.9.3']);
+  api.addFiles('sinon.1.17.4.browserify.js');
   api.export(['sinon']);
 });
