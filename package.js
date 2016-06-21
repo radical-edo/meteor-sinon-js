@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Npm.depends({
-  "sinon": "^1.17.0"
+  "sinon": "1.17.4"
 });
 
 Package.onUse(function(api) {
